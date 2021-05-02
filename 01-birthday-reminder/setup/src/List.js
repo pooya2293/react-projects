@@ -4,9 +4,9 @@ const List = ({ people }) => {
    return (
      <>
     	{people.map((p)=>{
-    		const { id,name,age,image }= p;
+    		const { id }= p;
     		return (
-    			<Person person={p} />
+    			<Person key={id} person={p} />
     		)
     	})
     	}
@@ -15,10 +15,10 @@ const List = ({ people }) => {
  };
  
 const Person = (props)=>{
-	const {id,name,age,image} = props.person
+	const {name,age,image} = props.person
 	return (
 
-		<article key={id} className="person">
+		<article className="person">
 			<img src={image} alt={name} />
 			<div>
 				<h4>{name}</h4>
