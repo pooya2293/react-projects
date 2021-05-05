@@ -1,9 +1,19 @@
 import React from 'react';
+import ReactBodymovin from 'react-bodymovin'
+import animation from './animation.json'
 
 const Loading = () => {
+
+	const bodymovinOptions = {
+	    loop: true,
+	    autoplay: true,
+	    prerender: true,
+	    animationData: animation
+  }
+
   return (
     <div className="loading">
-      <h1>loading...</h1>
+      <ReactBodymovin options={bodymovinOptions} />
     </div>
   );
 };

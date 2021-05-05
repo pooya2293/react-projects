@@ -8,6 +8,26 @@ function App() {
 	const[isloading,setIsLoading] = useState(false);
 	const[tours,setTours] = useState([]);
 
+
+  const fetchTours = async ()=>{
+  	setIsLoading(true)
+  	
+  	try{
+  		const respons = await fetch(url)
+	  	const tours = await respons.json()
+	  	setIsLoading(false)
+	  	setTours(tours)
+  	}catch(error){
+  		setIsLoading(false)
+  	}
+  }
+
+
+useEffect(()=>{
+	fetchTours();
+},[])
+
+
   if(isloading){
   	return (
 	  	<main>
