@@ -35,10 +35,16 @@ useEffect(()=>{
 	  	</main>
 	)
   }
+	
+  // remove function item
+  const removeItem = (id) =>{
+	const newTours = tours.filter((tour)=>tour.id !== id);
+	setTours(newTours)
+  }
 
   return (
   	<main>
-  		<Tours tours={tours} />
+  		<Tours tours={tours} removeItem={removeItem} />
   	</main>
   )
 }

@@ -4,8 +4,12 @@ import { FaSortDown } from 'react-icons/fa'
 import { FaTimes } from 'react-icons/fa'
 
 
-const Tour = ({id,image,info,price,name}) => {
+const Tour = ({id,image,info,price,name,removeItem}) => {
 	const [readMore,setReadMore] = useState(false);
+	const timsBtn = document.querySelector('.delete-btn');
+  	timsBtn.addEventListener('click',()=>console.log(id));
+
+
 
   return (
   	<>
