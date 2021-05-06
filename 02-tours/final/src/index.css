@@ -208,7 +208,7 @@ main {
 }
 .tour-price {
   color: var(--clr-primary-5);
-  background: var(--clr-primary-10);
+  /*background: var(--clr-primary-10);*/
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
 }
@@ -225,4 +225,10 @@ main {
   border: 1px solid var(--clr-red-dark);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+}
+
+.hide {
+  display: none;
+  color:red;
+  font-size: 33px;
 }

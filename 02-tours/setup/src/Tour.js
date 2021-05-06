@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { FaAnchor } from 'react-icons/fa'
+import React, { useState,useEffect } from 'react';
+import { FaEllipsisH } from 'react-icons/fa'
 
 
 const Tour = ({id,image,info,price,name}) => {
 	const [readMore,setReadMore] = useState(false);
+	const [isHide,setIsHide] = useState('')
+
   return (
   	<>
   		<article className='single-tour'>
@@ -16,8 +18,12 @@ const Tour = ({id,image,info,price,name}) => {
   				<p>
   					{readMore?info
   						:`${info.substring(0,55)}...`}
-	  				<FaAnchor style={{cursor:'pointer'}}
-					onClick={()=>setReadMore(!readMore)} />
+	  				<FaEllipsisH className={`${readMore ?'hide' : ''}`}
+	  				 style={{cursor:'pointer'}}
+					onClick={()=>{
+						setReadMore(!readMore)
+						}
+					} />
   				</p>
   				<button className='delete-btn'>X</button>
   			</footer>
