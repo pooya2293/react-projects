@@ -1,19 +1,20 @@
 import React from 'react';
-import ReactBodymovin from 'react-bodymovin'
+import lottie from 'lottie-web'
 import animation from './animation.json'
 
+
 const Loading = () => {
+	let animationContainer = React.createRef()
 
-	const bodymovinOptions = {
-	    loop: true,
-	    autoplay: true,
-	    prerender: true,
-	    animationData: animation
-  }
-
+	React.useEffect(()=>{
+		lottie.loadAnimation({
+			container: animationContainer.current,
+			animationData: animation
+		})
+	},[])
   return (
     <div className="loading">
-      <ReactBodymovin options={bodymovinOptions} />
+      <div ref={animationContainer}></div>
     </div>
   );
 };
