@@ -1,10 +1,11 @@
 import React, { useState,useEffect } from 'react';
-import { FaEllipsisH } from 'react-icons/fa'
+import { FaSortUp } from 'react-icons/fa'
+import { FaSortDown } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 
 
 const Tour = ({id,image,info,price,name}) => {
 	const [readMore,setReadMore] = useState(false);
-	const [isHide,setIsHide] = useState('')
 
   return (
   	<>
@@ -18,14 +19,20 @@ const Tour = ({id,image,info,price,name}) => {
   				<p>
   					{readMore?info
   						:`${info.substring(0,55)}...`}
-	  				<FaEllipsisH className={`${readMore ?'hide' : ''}`}
+	  				<FaSortDown id='iconTextOpen' className={`${readMore ?'hide' : ''}`}
+	  				 style={{cursor:'pointer'}}
+					onClick={()=>{
+						setReadMore(!readMore)
+						}
+					} />
+					<FaSortUp id='iconTextClose' className={`${!readMore ?'hide' : ''}`}
 	  				 style={{cursor:'pointer'}}
 					onClick={()=>{
 						setReadMore(!readMore)
 						}
 					} />
   				</p>
-  				<button className='delete-btn'>X</button>
+  				<FaTimes className='delete-btn'></FaTimes>
   			</footer>
   		</article>
   	</>
