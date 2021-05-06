@@ -1,6 +1,6 @@
 import React from 'react';
-import lottie from 'lottie-web'
-import animation from './animation.json'
+import lottie from 'lottie-web';
+import animation from './animations/spinerLoading.json';
 
 
 const Loading = () => {
@@ -10,8 +10,9 @@ const Loading = () => {
 		const anim = lottie.loadAnimation({
 			container: animationContainer.current,
 			animationData: animation
+			// path:'./animation.json' //doesnt woek
 		})
-		anim.setSpeed(2)
+		anim.setSpeed(.5)
 	},[])
   return (
     <div className="loading">

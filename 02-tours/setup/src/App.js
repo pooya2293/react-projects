@@ -5,7 +5,7 @@ import Tours from './Tours'
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/react-tours-project'
 function App() {
-	const[isloading,setIsLoading] = useState(false);
+	const[isloading,setIsLoading] = useState(true);
 	const[tours,setTours] = useState([]);
 
 
@@ -38,7 +38,7 @@ useEffect(()=>{
 
   return (
   	<main>
-  		<Tours />
+  		<Tours tours={tours} />
   	</main>
   )
 }
