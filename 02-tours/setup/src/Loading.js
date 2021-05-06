@@ -7,10 +7,11 @@ const Loading = () => {
 	let animationContainer = React.createRef()
 
 	React.useEffect(()=>{
-		lottie.loadAnimation({
+		const anim = lottie.loadAnimation({
 			container: animationContainer.current,
 			animationData: animation
 		})
+		anim.setSpeed(2)
 	},[])
   return (
     <div className="loading">
