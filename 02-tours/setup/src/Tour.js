@@ -6,10 +6,6 @@ import { FaTimes } from 'react-icons/fa'
 
 const Tour = ({id,image,info,price,name,removeItem}) => {
 	const [readMore,setReadMore] = useState(false);
-	const timsBtn = document.querySelector('.delete-btn');
-  	timsBtn.addEventListener('click',()=>console.log(id));
-
-
 
   return (
   	<>
@@ -36,7 +32,11 @@ const Tour = ({id,image,info,price,name,removeItem}) => {
 						}
 					} />
   				</p>
-  				<FaTimes className='delete-btn'></FaTimes>
+  				<FaTimes className='delete-btn'
+          onClick={()=>{
+            removeItem(id)
+          }}
+          ></FaTimes>
   			</footer>
   		</article>
   	</>
