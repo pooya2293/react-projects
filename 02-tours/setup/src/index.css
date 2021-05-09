@@ -251,3 +251,8 @@ main {
   font-size: 30px;
   margin: 11px 5px;
 }
+
+.refresh {
+  font-size: 60px;
+  border-radius: 60px;
+}

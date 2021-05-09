@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Tours from './Tours'
+
+
+// refresh ICON
+import { Icon, InlineIcon } from '@iconify/react';
+import refreshIcon from '@iconify-icons/fa/refresh';
+
+
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/react-tours-project'
@@ -41,6 +48,20 @@ useEffect(()=>{
 	const newTours = tours.filter((tour)=>tour.id !== id);
 	setTours(newTours)
   }
+
+// when oll tours hase gone
+   if(tours.length === 0) {
+    return(
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <Icon className='btn refresh' icon={refreshIcon} onClick={()=>{
+            fetchTours()
+          }}/>
+        </div>
+      </main>
+    )
+   }
 
   return (
   	<main>
