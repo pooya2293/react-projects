@@ -10,3 +10,9 @@ So surge -p build cant find build directory for share app
 I understant maby app creator changed pakage 
 Json i change it line build and it's worked
 See in after committee 
+
+And after creating build directory 
+
+$ surge -p build 
+ of course i lastly intall this -->
+$ npm install --global surge
