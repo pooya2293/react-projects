@@ -31,7 +31,7 @@ const Review = () => {
 	}
 
 	const randomNum = ()=>{
-		console.log(Math.floor((Math.random()*10/2)-1))
+		setIndex(Math.floor(Math.random()*people.length));
 	}
 
   return (
