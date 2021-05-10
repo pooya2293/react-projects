@@ -7,6 +7,9 @@ import { FaTimes } from 'react-icons/fa'
 const Tour = ({id,image,info,price,name,removeItem}) => {
 	const [readMore,setReadMore] = useState(false);
 
+
+ 
+
   return (
   	<>
   		<article className='single-tour'>
