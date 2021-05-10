@@ -30,6 +30,10 @@ const Review = () => {
 		})
 	}
 
+	const randomNum = ()=>{
+		console.log(Math.floor((Math.random()*10/2)-1))
+	}
+
   return (
   	<article className="review">
   		<div className="img-container">
@@ -49,7 +53,7 @@ const Review = () => {
   				<FaChevronRight />
   			</button>
   		</div>
-  		<button className="random-btn">
+  		<button className="random-btn" onClick={randomNum}>
   				surprise me!
   			</button>
   	</article>
