@@ -8,7 +8,7 @@ console.log(AllCategories)
 
 function App() {
 	const [menuItems,setMenueItems] = useState(items);
-	const [categories,setCategories] = useState([]);
+	const [categories,setCategories] = useState(AllCategories);
 
 	const filterItems = (category) => {
 		if(category === 'all'){
@@ -26,7 +26,7 @@ function App() {
   				<h2>our menue</h2>
   				<div className="underline"></div>
   			</div>
-  			<Categories filterItems={filterItems} />
+  			<Categories categories={categories} filterItems={filterItems} />
   			<Menu items={menuItems} />
   		</section>
   	</main>
