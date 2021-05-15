@@ -3,7 +3,7 @@ import Menu from './Menu';
 import Categories from './Categories';
 import items from './data';
 
-const AllCategories = items.map((item)=>item.category)
+const AllCategories = new Set(items.map((item)=>item.category))
 console.log(AllCategories)
 
 function App() {
