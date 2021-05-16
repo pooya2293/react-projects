@@ -21,7 +21,7 @@ function App() {
   				return (
   					<button key={job.id} 
   					onClick={()=>setValue(index)}
-  					className='job-btn'>
+  					className={`job-btn ${index === value && 'active-btn'}`}>
   					{job.company}
   					</button>
   				)
