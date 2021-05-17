@@ -14,8 +14,14 @@ function App() {
 	 	if(index > lastSlide){
 	 		setIndex(0)
 	 	}
+
 	 }, [index,people])
 
+	 useEffect(()=>{
+	 	setInterval(()=>{
+	 		setIndex(index+1)
+	 	},5000)
+	 },[index])
   return (
   	<section className="section">
   		<div className="title">
