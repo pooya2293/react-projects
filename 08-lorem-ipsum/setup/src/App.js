@@ -6,7 +6,8 @@ function App() {
   
   const handelSubmit = (e)=>{
   	e.preventDefault();
-  	console.log('hello world')
+  	console.log(count)//evry num i write in input show in console
+  	
   }
 
   return (
