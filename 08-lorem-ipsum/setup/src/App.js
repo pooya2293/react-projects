@@ -8,7 +8,7 @@ function App() {
   	e.preventDefault();
   	let amount = parseInt(count);
   	console.log(amount);
-  	setText(data);
+  	setText(data.slice(0,amount));
   }
 
   return (
