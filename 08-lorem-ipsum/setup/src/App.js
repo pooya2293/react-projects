@@ -6,7 +6,8 @@ function App() {
   
   const handelSubmit = (e)=>{
   	e.preventDefault();
-  	console.log(typeof count)
+  	let amount = parseInt(count);
+  	console.log(amount);
   	setText(data);
   }
 
