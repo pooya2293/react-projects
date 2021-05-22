@@ -11,8 +11,13 @@ function App() {
 	const handelSubmit = (e)=>{
 		e.preventDefault();
 		console.log('hello');
-		let colors = new Values(color).all(10)//this code comes from https://github.com/noeldelgado/values.js
-		console.log(colors)//(21) [N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N] --> 0: N {rgb: Array(3), alpha: 1, type: "tint", weight: 100}, 1: N {rgb: Array(3), alpha: 0.91333333, type: "tint", weight: 90}
+		try {
+		let colors = new Values(color).all(10)
+		console.log(colors)
+		} catch(error) {
+			setError(true)
+			console.log(error);
+		}
 	}
   return (
   	<>
