@@ -180,7 +180,7 @@ input {
   }
 }
 input.error {
-  border: 2px solid var(--clr-red-dark);
+  border: 10px solid var(--clr-red-dark);
 }
 .colors {
   min-height: calc(100vh - 100px);
