@@ -6,7 +6,12 @@ const SingleColor = ({ index,rgb,weight,hexPaPa }) => {
 	const bcg = rgb.join(',')
 	// const hex = rgbToHex(...rgb)//way 1 for get hex
 	const hexVal = `#${hexPaPa}`
-	
+	useEffect(()=>{
+		const timeout = setTimeout(()=>{
+			setAlert(false)
+		},3000)
+		return()=> clearTimeout(timeout)
+	},[alert])	
   return (
   	<article className={`color ${index > 10 && 'color-light'}`} style={{backgroundColor:`rgb(${bcg})`}} onClick={()=>{
   		setAlert(true)
