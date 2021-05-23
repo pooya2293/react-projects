@@ -35,7 +35,11 @@ function App() {
   			{list.map((color, index)=>{
   				console.log(color)
   				return(
-  					<SingleColor key={index} {...color} index={index} />
+  					<SingleColor key={index}
+  					 {...color} 
+  					 index={index} 
+  					 hexPaPa={color.hex} //way 2 of link hex
+  					  />
   				)
   			})}
   		</section>
