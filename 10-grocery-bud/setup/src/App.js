@@ -13,7 +13,7 @@ function App() {
 		e.preventDefault()
 		if(!name){
 			// display alert
-			setAlert({ show:true,msg:'لطفا مقداری وارد کنید',type:'danger' })
+			showAlert(true,'لطفا مقداری وارد کنید','danger')
 		}else if (name && isEditing) {
 			// deal with edit
 		}else {
@@ -23,6 +23,13 @@ function App() {
 			setName('')
 		}
 	}
+
+const showAlert = 
+// set default of show alert
+(show=false,msg='',type='') =>{
+	setAlert({show:show,msg:msg,type:type})
+}
+
   return (
   	<section className="section-center">
   	<form className="grocery-form" onSubmit={handleSubmit} >
