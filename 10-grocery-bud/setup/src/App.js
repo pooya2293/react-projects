@@ -26,7 +26,7 @@ function App() {
 
 const showAlert = 
 // set default of show alert
-(show,msg,type) =>{
+(show=true,msg='sag',type='danger') =>{
 	setAlert({show:show,msg:msg,type:type})
 }
 
