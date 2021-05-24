@@ -26,14 +26,14 @@ function App() {
 
 const showAlert = 
 // set default of show alert
-(show=false,msg='',type='') =>{
+(show,msg,type) =>{
 	setAlert({show,msg,type})
 }
 
   return (
   	<section className="section-center">
   	<form className="grocery-form" onSubmit={handleSubmit} >
-  		{alert.show && <Alert  {...alert} />}
+  		{alert.show && <Alert  {...alert} removeAlert={showAlert} />}
   		<h3>grocery bud</h3>
   		<div className="form-control">
   			<input type="text" className='grocery' value={name} placeholder='EX: eggs' onChange={(e)=> setName(e.target.value)} />
