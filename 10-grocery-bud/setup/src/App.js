@@ -7,12 +7,13 @@ function App() {
 	const [list,setList] = useState([])
 	const [ isEditing , setIsEditing ] = useState(false)
 	const [ editeId , setEditeId ] = useState(null)
-	const [alert , setAlert ] = useState({ show:true , msg:'hello world' , type:'success' })
+	const [alert , setAlert ] = useState({ show:true , msg:'' , type:'' })
 
 	const handleSubmit = (e)=>{
 		e.preventDefault()
 		if(!name){
 			// display alert
+			setAlert({ show:true,msg:'لطفا مقداری وارد کنید',type:'danger' })
 		}else if (name && isEditing) {
 			// deal with edit
 		}else {

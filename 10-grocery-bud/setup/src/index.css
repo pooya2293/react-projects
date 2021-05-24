@@ -189,8 +189,8 @@ Grocery List
   background: #f8d7da;
 }
 .alert-success {
-  color: #155724;
-  background: #d4edda;
+  color: #fff;
+  background: rgb(35,201,22,.75);
 }
 .grocery-form h3 {
   color: var(--clr-primary-1);
