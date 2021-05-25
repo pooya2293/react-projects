@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import List from './List'
 import Alert from './Alert'
+import DeleteAlert from './DeleteAlert'
 
 function App() {
 	const [name,setName] = useState('')
@@ -8,6 +9,7 @@ function App() {
 	const [ isEditing , setIsEditing ] = useState(false)
 	const [ editeId , setEditeId ] = useState(null)
 	const [alert , setAlert ] = useState({ show:true , msg:'' , type:'' })
+	const [ delAlert,setDelAlert ] = useState(false)
 
 	const handleSubmit = (e)=>{
 		e.preventDefault()
@@ -30,6 +32,12 @@ const showAlert =
 	setAlert({show,msg,type})
 }
 
+const clearList = ()=>{
+	// show yes or no clear
+	showAlert('true','کل لیست پاک شد!','danger')
+	setList([])
+}
+
   return (
   	<section className="section-center">
   	<form className="grocery-form" onSubmit={handleSubmit} >
@@ -45,9 +53,10 @@ const showAlert =
   	{list.length > 0 && (
   		<div className="grocery-container">
   			<List items={list} />
-  			<button className='clear-btn'>clear items</button>
+  			<button className='clear-btn' onClick={clearList} >clear items</button>
   		</div>
   	)}	
+  	{delAlert && <DeleteAlert />}
   	</section> 
   )
 }
