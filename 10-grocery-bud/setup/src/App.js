@@ -53,10 +53,10 @@ const clearList = ()=>{
   	{list.length > 0 && (
   		<div className="grocery-container">
   			<List items={list} />
-  			<button className='clear-btn' onClick={clearList} >clear items</button>
+  			<button className='clear-btn' onClick={()=>setDelAlert(true)} >clear items</button>
   		</div>
   	)}	
-  	{delAlert && <DeleteAlert />}
+  	{delAlert && <DeleteAlert clearList={clearList} setDelAlert={setDelAlert} />}
   	</section> 
   )
 }

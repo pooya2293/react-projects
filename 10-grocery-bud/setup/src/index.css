@@ -307,35 +307,36 @@ Grocery List
 
 /* add by me */
 .alert-del {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-.alert-del::before {
-  content: 'آیا می خواهید همه موارد را پاک کنید؟';
-  padding: 20px;
-  color: #fff;
-  background: #4271c3;
-  width: auto;
-  min-width: 300px;
+  background-color: #433939;
+  right: .01rem;
+  width: 100%;
+  height: 200px;
+  opacity: 80%;
   border-radius: 8px;
-  height:140px;
-  bottom: 100px;
-  opacity: 78%;
-  position: absolute;
-  z-index: 0;
+  bottom: 15rem;
 }
+
 .btn2-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+}
+.btn2-container::before{
+  content: 'آیا می خواهید همه موارد را پاک کنید؟';
+  padding-bottom: 4rem;
+  color: #fff;
+
 }
 .btn2-container button {
   position: absolute;
   background-color: #fff;
   padding: 4px 20px 4px 20px;
+  margin-top: 2.5rem;
   z-index: 1;
 }
  #btn1 {
