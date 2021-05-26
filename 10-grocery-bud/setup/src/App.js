@@ -17,7 +17,14 @@ function App() {
 			// display alert
 			showAlert(true,'لطفا مقداری وارد کنید','danger')
 		}else if (name && isEditing) {
-			// deal with edit
+			setList(list.map((item)=>{
+				if(item.id === editeId){
+					return { ...item,title:name }
+				}
+			}))
+			setName('')
+			setEditeId(null)
+			setIsEditing(false)
 		}else {
 			showAlert(true,'مورد شما به لیست اضافه شد','success')
 			const newItem = {id: new Date().getTime().toString(),title:name}
