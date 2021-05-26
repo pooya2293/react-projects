@@ -21,6 +21,7 @@ function App() {
 				if(item.id === editeId){
 					return { ...item,title:name }
 				}
+				return item
 			}))
 			setName('')
 			setEditeId(null)
