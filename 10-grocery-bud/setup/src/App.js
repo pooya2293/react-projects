@@ -26,6 +26,7 @@ function App() {
 			setName('')
 			setEditeId(null)
 			setIsEditing(false)
+			showAlert(true,'مقدار تغییر کرد.','success')
 		}else {
 			showAlert(true,'مورد شما به لیست اضافه شد','success')
 			const newItem = {id: new Date().getTime().toString(),title:name}
@@ -58,6 +59,9 @@ const editeItem = (id)=>{
 	setName(speceficItem.title)
 }
 
+useEffect(()=>{
+	localStorage.setItem('localList',JSON.stringify(list))
+}, [list])
   return (
   	<section className="section-center">
   	<form className="grocery-form" onSubmit={handleSubmit} >
