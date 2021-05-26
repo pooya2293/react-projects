@@ -43,6 +43,13 @@ const removeItem = (id)=>{
 	setList(list.filter((item)=>item.id !== id))
 }
 
+const editeItem = (id)=>{
+	const speceficItem = list.find((item)=>item.id === id);
+	setIsEditing(true)
+	setEditeId(id)
+	setName(speceficItem.title)
+}
+
   return (
   	<section className="section-center">
   	<form className="grocery-form" onSubmit={handleSubmit} >
@@ -57,7 +64,7 @@ const removeItem = (id)=>{
   	</form>
   	{list.length > 0 && (
   		<div className="grocery-container">
-  			<List items={list} removeItem={removeItem} />
+  			<List items={list} removeItem={removeItem} editeItem={editeItem} />
   			<button className='clear-btn' onClick={()=>setDelAlert(true)} >clear items</button>
   		</div>
   	)}	
