@@ -3,9 +3,20 @@ import List from './List'
 import Alert from './Alert'
 import DeleteAlert from './DeleteAlert'
 
+const getLocalStorage = ()=>{
+	let list = localStorage.getItem('localList')
+	if(list){
+		return JSON.parse(list)
+	}else{
+		return []
+	}
+}
+
+
+
 function App() {
 	const [name,setName] = useState('')
-	const [list,setList] = useState([])
+	const [list,setList] = useState(getLocalStorage)
 	const [ isEditing , setIsEditing ] = useState(false)
 	const [ editeId , setEditeId ] = useState(null)
 	const [alert , setAlert ] = useState({ show:true , msg:'' , type:'' })
@@ -35,6 +46,7 @@ function App() {
 		}
 	}
 
+
 const showAlert = 
 // set default of show alert
 (show=false,msg='',type='') =>{
@@ -61,7 +73,10 @@ const editeItem = (id)=>{
 
 useEffect(()=>{
 	localStorage.setItem('localList',JSON.stringify(list))
-}, [list])
+	if(!name){
+		setIsEditing(false)
+	}
+}, [list,name])
   return (
   	<section className="section-center">
   	<form className="grocery-form" onSubmit={handleSubmit} >
