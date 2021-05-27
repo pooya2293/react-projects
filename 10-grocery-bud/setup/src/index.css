@@ -64,6 +64,7 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
+
 }
 ul {
   list-style-type: none;
@@ -75,7 +76,7 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: var(--spacing);
+  /*letter-spacing: var(--spacing);*/
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
