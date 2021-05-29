@@ -157,7 +157,7 @@ nav {
   transition: var(--transition);
   cursor: pointer;
 }
-.nav-toggle:hover {
+.nav-toggle-click {
   color: var(--clr-primary-1);
   transform: rotate(90deg);
 }

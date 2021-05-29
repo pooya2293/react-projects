@@ -5,12 +5,16 @@ import logo from './logo.svg'
 
 const Navbar = () => {
 	const[showLinks,setShowLinks] = useState(false)
+
   return (
   	<nav>
   		<div className="nav-center">
   			<div className="nav-header">
   				<img src={logo} alt="logo" />
-  				<button className="nav-toggle" onClick={()=>setShowLinks(!showLinks)}>
+  				<button className="nav-toggle" onClick={()=>{
+  					setShowLinks(!showLinks)
+  					document.querySelector('.nav-toggle').classList.toggle('nav-toggle-click')
+  				}}>
   					<FaBars />
   				</button>
   			</div>
