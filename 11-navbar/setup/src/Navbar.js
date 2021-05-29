@@ -11,10 +11,7 @@ const Navbar = () => {
   		<div className="nav-center">
   			<div className="nav-header">
   				<img src={logo} alt="logo" />
-  				<button className="nav-toggle" onClick={()=>{
-  					setShowLinks(!showLinks)
-  					document.querySelector('.nav-toggle').classList.toggle('nav-toggle-click')
-  				}}>
+  				<button className={`${showLinks?"nav-toggle nav-toggle-click":"nav-toggle"}`} onClick={()=>setShowLinks(!showLinks)}>
   					<FaBars />
   				</button>
   			</div>
