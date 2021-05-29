@@ -205,7 +205,7 @@ nav {
     display: none;
   }
   .links-container {
-    height: auto !important;
+    /*height: auto !important;*/
   }
   .links {
     display: flex;
