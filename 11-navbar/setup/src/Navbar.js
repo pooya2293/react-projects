@@ -9,15 +9,8 @@ const Navbar = () => {
 	const linksRef = useRef(null)
 
 	useEffect(() => {
-		const linksHeight = linksRef.current.getBoundingClientRect();
-		console.log(linksHeight)//bottom: 394.60071563720703
-								//height: 297.7430725097656
-								//left: 0
-								//right: 622.2222290039062
-								// top: 96.8576431274414
-								// width: 622.2222290039062
-								// x: 0
-								// y: 96.8576431274414
+		const linksHeight = linksRef.current.getBoundingClientRect().height;
+		console.log(linksHeight)//297.7430725097656
 	}, [showLinks])
   return (
   	<nav>
