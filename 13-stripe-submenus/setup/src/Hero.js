@@ -8,7 +8,7 @@ const Hero = () => {
   	<section className='hero'>
   		<div className="hero-center">
   			<article className='hero-info'>
-  				<h4>peyment intructore peyment from internet</h4>
+  				<h1>peyment intructore peyment from internet</h1>
   				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, nam! Nam cupiditate adipisci reprehenderit explicabo quisquam repellendus enim recusandae nobis.</p>
   				<button className='btn'>start now</button>
   			</article>
