@@ -5,6 +5,10 @@ import {useGlobalContext} from './context'
 
 const Navbar = () => {
 	const{openSidebar,openSubmenu,closeSubmenu} = useGlobalContext()
+	const dispplaySubmenu =(e)=>{
+		console.log(e.target) //each item when hover show this in console-->//<button class="link-btn">company</button> //<button class="link-btn">developers</button>
+		openSubmenu()
+	}
 	return(
 		<nav className="nav">
 			<div className="nav-center">
@@ -16,17 +20,17 @@ const Navbar = () => {
 				</div>
 				<ul className="nav-links">
 					<li>
-						<button className='link-btn'>
+						<button className='link-btn' onMouseOver={dispplaySubmenu}>
 							products
 						</button>
 					</li>
 					<li>
-						<button className='link-btn'>
+						<button className='link-btn' onMouseOver={dispplaySubmenu}>
 							developers
 						</button>
 					</li>
 					<li>
-						<button className='link-btn'>
+						<button className='link-btn' onMouseOver={dispplaySubmenu}>
 							company
 						</button>
 					</li>
