@@ -5,7 +5,7 @@ import {useGlobalContext} from './context'
 
 const Navbar = () => {
 	const{openSidebar,openSubmenu,closeSubmenu} = useGlobalContext()
-	//#1
+	
 	const dispplaySubmenu =(e)=>{
 		const page = e.target.textContent;
 		const tempBtn = e.target.getBoundingClientRect();//return location of Elemnt in screen
