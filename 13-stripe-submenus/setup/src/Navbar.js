@@ -5,12 +5,12 @@ import {useGlobalContext} from './context'
 
 const Navbar = () => {
 	const{openSidebar,openSubmenu,closeSubmenu} = useGlobalContext()
-	
+
 	const dispplaySubmenu =(e)=>{
 		const page = e.target.textContent;
-		const tempBtn = e.target.getBoundingClientRect();//return location of Elemnt in screen
+		const tempBtn = e.target.getBoundingClientRect();
 		const center = (tempBtn.left + tempBtn.right)/2;
-		const bottom = tempBtn.bottom - 3;//we whant submenu lift 3px up
+		const bottom = tempBtn.bottom - 3;
 		openSubmenu(page,{center,bottom})
 	}
 	return(
