@@ -5,9 +5,13 @@ import {useGlobalContext} from './context'
 
 const Navbar = () => {
 	const{openSidebar,openSubmenu,closeSubmenu} = useGlobalContext()
+	//#1
 	const dispplaySubmenu =(e)=>{
-		console.log(e.target) //each item when hover show this in console-->//<button class="link-btn">company</button> //<button class="link-btn">developers</button>
-		openSubmenu()
+		const page = e.target.textContent;
+		const tempBtn = e.target.getBoundingClientRect();//return location of Elemnt in screen
+		const center = (tempBtn.left + tempBtn.right)/2;
+		const bottom = tempBtn.bottom - 3;//we whant submenu lift 3px up
+		openSubmenu(page,{center,bottom})
 	}
 	return(
 		<nav className="nav">
