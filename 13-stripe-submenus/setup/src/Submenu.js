@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import {useGlobalContext} from './context'
 
 const Submenu = () => {
-	// #2
+
 	const{isSubmenuOpen,
 		location,
 		page:{page,links}} = useGlobalContext()
