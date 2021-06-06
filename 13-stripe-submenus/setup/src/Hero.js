@@ -16,7 +16,7 @@ const Hero = () => {
   				<img src={phoneImg} alt='phone' className="phone-img" />
   			</article>
   		</div>
-  	</section>
+  	</section>  
   )
 }
 
