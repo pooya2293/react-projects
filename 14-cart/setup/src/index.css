@@ -139,7 +139,7 @@ nav h3 {
   position: relative;
 }
 nav svg {
-  width: 2rem;
+  width: 2.5rem;
   fill: var(--clr-white);
 }
 .amount-container {
