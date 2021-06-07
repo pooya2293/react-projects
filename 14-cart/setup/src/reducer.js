@@ -5,6 +5,14 @@ const reducer = (state,action)=>{
 			cart:[],
 		}
 	}
+	if(action.type === 'CLEAR_ITEM'){
+		const newItems =  state.cart.filter((item)=>item.id !== action.payLoad)
+
+		return{
+			  ...state,
+			 cart: newItems
+		}
+	}
 	return state
 }
 
