@@ -62,7 +62,8 @@ const reducer = (state,action)=>{
 			loading:false,
 		}
 	}
-	return state
+	// Setup error for time not matching action type
+	throw new Error('no matching action type')
 }
 
 export default reducer
