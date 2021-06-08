@@ -2,7 +2,6 @@ import React from 'react'
 import { useGlobalContext } from './context'
 const CartItem = ({ id, img, title, price, amount }) => {
   const {clearItem,increas,decrease} = useGlobalContext()
-  console.log(clearItem)
   return (
     <article className='cart-item' >
       <img src={img} alt={title} />

@@ -38,6 +38,26 @@ const reducer = (state,action)=>{
 			cart : tempCart,
 		}
 	}
+	if(action.type === 'TOTAL'){
+
+		let {total,amount} = state.cart.reduce((cartTotal,cartItem)=>{
+			//console.log(cartItem)//show in orderd id in console each object item for ./data
+			//console.log(cartTotal)//{total: 0, amount: 0}//{total: 599.99, amount: 1}//{total: 1099.98, amount: 2}
+			const {amount,price} = cartItem
+			// console.log(amount,price)//1 599.99//1 499.99//1 699.99
+			cartTotal.amount += amount
+			const itemTotal = price * amount
+			cartTotal.total += itemTotal
+
+			return cartTotal
+		},{total:0,amount:0})//if don't write total:0 return NaN but not for amount  
+		total = parseFloat(total.toFixed(2))
+		return{
+			...state,
+			amount,
+			total,
+		}
+	}
 	return state
 }
 
