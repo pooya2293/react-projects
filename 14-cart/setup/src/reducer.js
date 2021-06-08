@@ -56,6 +56,19 @@ const reducer = (state,action)=>{
 			total,
 		}
 	}
+	if(action.type === 'LOADING'){
+		return{
+			...state,
+			loading:true,
+		}
+	}
+	if(action.type === 'DISPLAY_ITEMS'){
+		return{
+			...state,
+			cart:action.payLoad,
+			loading:false,
+		}
+	}
 	return state
 }
 

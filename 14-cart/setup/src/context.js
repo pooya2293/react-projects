@@ -34,6 +34,11 @@ const AppProvider = ({ children }) => {
     const cart = await response.json();
     dispatch({type:'DISPLAY_ITEMS',payLoad:cart})
   }
+
+  useEffect(() => {
+    fetchData()
+  },[])
+
   useEffect(() => {
     dispatch({ type:'TOTAL' })
   }, [state.cart])
