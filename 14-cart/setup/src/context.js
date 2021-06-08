@@ -21,18 +21,14 @@ const AppProvider = ({ children }) => {
   const clearItem = (id)=>{
     dispatch({type: 'CLEAR_ITEM',payLoad:id})
   }
-  const increas = (id)=>{
-    dispatch({type: 'INCREAS',payLoad:id})
-  }
-  const decrease = (id)=>{
-    dispatch({type: 'DECREASE',payLoad:id})
-  }
-
   const fetchData = async ()=>{
     dispatch({type:'LOADING'})
     const response = await fetch(url);
     const cart = await response.json();
     dispatch({type:'DISPLAY_ITEMS',payLoad:cart})
+  }
+  const togleAmount =(id,type)=>{
+    dispatch({type:'TOGLE_AMOUNT',payLoad:{id,type}})
   }
 
   useEffect(() => {
@@ -48,8 +44,7 @@ const AppProvider = ({ children }) => {
         ...state,
         clearCart,
         clearItem,
-        increas,
-        decrease
+        togleAmount
       }}
     >
       {children}
