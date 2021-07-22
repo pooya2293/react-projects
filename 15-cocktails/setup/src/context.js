@@ -6,7 +6,7 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
 	const [loading,setLoading] = useState(false);
-	const [searchTerm,setSearchTerm] = useState('a');
+	const [searchTerm,setSearchTerm] = useState('z');//with this code search cocktail name start with z
 	const [cocktails,setCocktails]=useState([]);
 
   const fetchDrinks = async()=>{
