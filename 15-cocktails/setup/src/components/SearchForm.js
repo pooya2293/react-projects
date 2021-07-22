@@ -8,6 +8,11 @@ const SearchForm = () => {
 	const searchCocktail = ()=>{
 		setSearchTerm(searchValue.current.value)
 	}
+
+	React.useEffect(()=>{
+		searchValue.current.focus();
+	},[])
+
   return (
     <section className='section search'>
     	<form className="search-form">
