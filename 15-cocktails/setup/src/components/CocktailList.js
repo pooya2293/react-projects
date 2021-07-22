@@ -5,7 +5,8 @@ import { useGlobalContext } from '../context'
 
 const CocktailList = () => {
   const {loading,cocktails} = useGlobalContext();
-
+  console.log(cocktails)//give array in frame that i make
+//0: {id: "15328", name: "Zorro", image: "https://www.thecocktaildb.com/image 1: ...
   if(loading) {
   	return <Loading />
   }
