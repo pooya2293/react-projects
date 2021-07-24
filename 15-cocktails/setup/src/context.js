@@ -43,9 +43,10 @@ const AppProvider = ({ children }) => {
     }
   }
 
+// i having an Error in here
   useEffect(()=>{
     fetchDrinks();
-  },[searchTerm])
+  },[searchTerm])//React Hook useEffect has a missing dependency: 'fetchDrinks'. Either include it or remove the dependency array
 
   return <AppContext.Provider value={{
   	loading,
