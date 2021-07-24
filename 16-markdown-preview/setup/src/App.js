@@ -2,7 +2,15 @@ import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 
 function App() {
-  return <h2>markdown preview starter</h2>
+	const [markdown,setMarkdown] = useState('## markdown preview');
+  return (
+  <main>
+  	<section className="markdown">
+  		<textarea className='input' value={markdown} onChange={(e)=>setMarkdown(e.target.value)}></textarea>
+  		<article className='result'>{markdown}</article>
+  	</section>		
+  </main>
+  )
 }
 
 export default App
