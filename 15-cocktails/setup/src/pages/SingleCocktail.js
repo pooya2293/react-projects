@@ -15,7 +15,6 @@ const SingleCocktail = () => {
 			try {
 				const response = await fetch(`${url}${newID}`);
 				const data = await response.json();
-				console.log(data.drinks);
 				if(data.drinks){
 					const{
 						strDrink: name,

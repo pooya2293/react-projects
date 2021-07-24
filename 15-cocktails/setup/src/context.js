@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
 	const [searchTerm,setSearchTerm] = useState('z');
 	const [cocktails,setCocktails]=useState([]);
 
-  const fetchDrinks = async()=>{
+  const fetchDrinks =useCallback(async()=>{
     setLoading(true);
     try{
       const response = await fetch(`${url}${searchTerm}`);
@@ -41,12 +41,12 @@ const AppProvider = ({ children }) => {
       console.log(error)
       setLoading(false)
     }
-  }
+  },[searchTerm]);
 
-// i having an Error in here
+
   useEffect(()=>{
     fetchDrinks();
-  },[searchTerm])//React Hook useEffect has a missing dependency: 'fetchDrinks'. Either include it or remove the dependency array
+  },[searchTerm,fetchDrinks])
 
   return <AppContext.Provider value={{
   	loading,
