@@ -3,8 +3,22 @@ import { useFetch } from './useFetch'
 import Follower from './Follower'
 function App() {
 	const {loading,data}=useFetch();
-	//console.log(data);//show 100 data in array
-  return <h2>pagination starter</h2>
+	
+  return(
+  	<main>
+  		<div className="section-title">
+  			<h1>{loading?'loading...':'pagination'}</h1>
+  			<div className="underline"></div>
+  		</div>
+  		<section className="followers">
+  			<div className="container">
+  				{data.map((follower)=>{
+  					return <Follower key={follower.id} {...follower} />
+  				})}
+  			</div>
+  		</section>
+  	</main>
+  )
 }
 
 export default App
