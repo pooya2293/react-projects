@@ -61,22 +61,22 @@ function App() {
   				<p className="user-title">my {title} is</p>
   				<p className="user-value">{value}</p>
   				<div className="values-list">
-  					<button className="icon" data-label='name' onMouseOver={handleValue}>
+  					<button className="icon" data-label='name' onMouseEnter={handleValue}>
   						<FaUser />
   					</button>
-  					<button className="icon" data-label='email' onMouseOver={handleValue}>
+  					<button className="icon" data-label='email' onMouseEnter={handleValue}>
   						<FaEnvelopeOpen />
   					</button>
-  					<button className="icon" data-label='age' onMouseOver={handleValue}>
+  					<button className="icon" data-label='age' onMouseEnter={handleValue}>
   						<FaCalendarTimes />
   					</button>
-  					<button className="icon" data-label='street' onMouseOver={handleValue}>
+  					<button className="icon" data-label='street' onMouseEnter={handleValue}>
   						<FaMap />
   					</button>
-  					<button className="icon" data-label='phone' onMouseOver={handleValue}>
+  					<button className="icon" data-label='phone' onMouseEnter={handleValue}>
   						<FaPhone />
   					</button>
-  					<button className="icon" data-label='password' onMouseOver={handleValue}>
+  					<button className="icon" data-label='password' onMouseEnter={handleValue}>
   						<FaLock />
   					</button>
   				</div>
