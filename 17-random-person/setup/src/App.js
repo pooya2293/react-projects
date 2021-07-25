@@ -42,14 +42,6 @@ function App() {
 		setLoading(false);
 		setTitle('name');
 		setValue(newPerson.name);
-		console.log(newPerson);//{age: 63
-// email: "emilie.mortensen@example.com"
-// image: "https://randomuser.me/api/portraits/women/58.jpg"
-// name: "Munkemaen Mortensen"
-// password: "mason1"
-// phone: "01051952"
-// street: "4029 Munkemaen"
-// }
 
 	}
 
@@ -84,7 +76,7 @@ function App() {
   						<FaLock />
   					</button>
   				</div>
-  				<button type='button' className='btn'>
+  				<button type='button' className='btn' onClick={getPerson} >
   					{loading?'loading ...':'random user'}
   				</button>
   			</div>
