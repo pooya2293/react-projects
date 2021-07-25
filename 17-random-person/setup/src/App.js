@@ -16,9 +16,10 @@ function App() {
 	const [value,setValue]=useState('random person');
 
 	const handleValue=(e)=>{
-		//console.log(e.target);//its sometimes represents svg icon we want just triger buttons so: 
 		if(e.target.classList.contains('icon')){
-			console.log(e.target);//this is just represents button that we want
+			const newValue=e.target.dataset.label;
+			setTitle(newValue);
+			setValue(person[newValue]);
 		}
 	}
 
@@ -39,7 +40,7 @@ function App() {
 			password,
 			age,
 			street:`${number} ${name}`,
-			name: `${name} ${last}`
+			name: `${first} ${last}`
 		}
 		setPerson(newPerson);
 		setLoading(false);
