@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import paginate from './utils'
-const url = 'https://api.github.com/users/john-smilga/followers?per_page=100'
+const url = 'https://api.github.com/users/Neysidev/followers?per_page=100'
 
 export const useFetch = () => {
   const [loading, setLoading] = useState(true)
@@ -11,6 +11,7 @@ export const useFetch = () => {
     const data = await response.json()
     setData(data)
     setLoading(false)
+    console.log(data)
   }
 
   useEffect(() => {
