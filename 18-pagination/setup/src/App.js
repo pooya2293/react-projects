@@ -3,6 +3,10 @@ import { useFetch } from './useFetch'
 import Follower from './Follower'
 function App() {
 	const {loading,data}=useFetch();
+  console.log(data);//Array(12)
+//0: (9) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// 1: (9) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// 2: (9) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
 	
   return(
   	<main>
