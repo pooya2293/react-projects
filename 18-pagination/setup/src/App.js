@@ -5,10 +5,15 @@ function App() {
  const {loading , data} = useFetch();
   const [page , setPage] = useState(0);
   const [followers,setFollowers] = useState([]);
+  const [startPage ,setStartPage] = useState(0);
+  const [endPage ,setEndPage] = useState(5);
+  const [newData,setNewData] = useState([])
 
   useEffect(()=>{
     if(loading) return
     setFollowers(data[page]);
+  
+   setNewData(data.slice(startPage,endPage));
   },[loading,page])
 
   const handlePage = (index)=>{
@@ -31,10 +36,13 @@ function App() {
       if(nextPage > data.length - 1){
         nextPage = 0;
       }
+      if(nextPage > endPage){
+        setEndPage(2*5)
+        setStartPage(5)
+      }
       return nextPage
     })
   }
-
 
   return(
    <main>
@@ -50,7 +58,7 @@ function App() {
      </div>
         {!loading && <div className="btn-container">
           <button className="prev-btn" onClick={prev}>prev</button>
-          {data.map((item,index)=>{
+          {newData.map((item,index)=>{
             return(
               <button 
               className={`page-btn ${index === page?'active-btn':null}`}
