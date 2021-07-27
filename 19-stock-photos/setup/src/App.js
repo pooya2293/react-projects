@@ -13,17 +13,27 @@ function App() {
 	const [loading,setLoading] = useState(false);
 	const [photos,setPhotos] = useState([]);
 	const [page,setPage] = useState(1);
+	const [query,setQuery] = useState('');
 
 	const fetchData = async()=>{
 		setLoading(true)
 		let url;
 		const urlPage = `&page=${page}`;
-		url = `${mainUrl}${cliendID}${urlPage}`
+		const urlQuery = `&query=${query}`
+		if(query){
+			url = `${searchUrl}${cliendID}${urlPage}${urlQuery}`
+		}else{	
+			url = `${mainUrl}${cliendID}${urlPage}`
+		}
 		try{
 			const response = await fetch(url);
 			const data = await response.json();
 			setPhotos((oldPhotoes)=>{
-				return [...oldPhotoes , ...data]
+				if(query){
+					return [...oldPhotoes,...data.results]
+				}else{
+					return [...oldPhotoes , ...data]
+				}
 			});
 			setLoading(false);
 
@@ -35,7 +45,7 @@ function App() {
 
 	const handleSubmit = (e)=>{
 		e.preventDefault();
-		console.log('HEllo World')
+		fetchData();
 	}
 
 	useEffect(()=>{
@@ -58,7 +68,7 @@ function App() {
   		<main>
   			<section className="search">
   				<form className="search-form">
-  					<input type="text" placeholder='search' className="form-input" />
+  					<input type="text" placeholder='search' className="form-input" value={query} onChange={(e)=>setQuery(e.target.value)}/>
 	  					<button type='submit' className='submit-btn' onClick={handleSubmit}>
 	  						<FaSearch />
 	  					</button>
