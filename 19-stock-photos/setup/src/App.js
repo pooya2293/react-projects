@@ -37,6 +37,17 @@ function App() {
 	useEffect(()=>{
 		fetchData();
 	},[])
+
+	useEffect(()=>{
+		const event = window.addEventListener('scroll' ,()=>{
+			if(!loading && window.innerHeight + window.scrollY >= document.body.scrollHeight - 10)
+			{
+			console.log('it\'s worked')
+			}
+		})
+		return ()=> window.removeEventListener( 'scroll',event )
+	},[])
+
   	return (
   		<main>
   			<section className="search">
