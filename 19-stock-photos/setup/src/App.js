@@ -53,6 +53,7 @@ function App() {
 
 	useEffect(()=>{
 		fetchData();
+		// eslint-disable-next-line
 	},[page])
 
 	useEffect(()=>{
@@ -65,6 +66,7 @@ function App() {
 			}
 		})
 		return ()=> window.removeEventListener( 'scroll',event )
+		// eslint-disable-next-line
 	},[])
 
   	return (
