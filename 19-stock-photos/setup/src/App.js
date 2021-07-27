@@ -53,7 +53,7 @@ function App() {
   						return <Photo key={image.id} {...image} />
   					})}
   				</div>
-  				{loading && <h2 classNme='loading'>loading...</h2>}
+  				{loading && <h2 className='loading'>loading...</h2>}
   			</section>
   		</main>	
   	)
