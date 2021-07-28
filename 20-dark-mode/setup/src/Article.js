@@ -1,10 +1,9 @@
 import React from 'react'
-import moment from 'moment'
 
 const Article = ({ date,length,snippet,title }) => {
 	
 	const options = {weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'}
-	const faDate = date.toLocaleString('fa-FA',options);
+	const faDate = date.toLocaleString('fa-FA',options);//so in here i dont use moment js
 
   return (
   	<article className='post'>
