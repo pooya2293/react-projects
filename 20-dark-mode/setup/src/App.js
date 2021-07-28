@@ -2,11 +2,19 @@ import React, { useState, useEffect } from 'react'
 import data from './data'
 import Article from './Article'
 
+const getLocaleTheme = ()=>{
+	let theme = 'light-theme'
+	if(localStorage.getItem('theme')){
+		theme = localStorage.getItem('theme')
+	}
+	return theme
+}
 function App() {
-	const [theme,setTheme] = useState('light-theme')
+	const [theme,setTheme] = useState(getLocaleTheme())
 
 	useEffect(()=>{
 		document.documentElement.className = theme
+		localStorage.setItem('theme',theme)
 	},[theme])
 
 	const toggle = ()=>{
