@@ -2,12 +2,17 @@ import React from 'react'
 import moment from 'moment'
 
 const Article = ({ date,length,snippet,title }) => {
-	console.log(moment.locale());//en
+	
+	const options = {weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'}
+	const faDate = date.toLocaleString('fa-FA',options);
+
   return (
   	<article className='post'>
   		<h2>{title}</h2>
   		<div className='post-info'>
-  			<span>{moment().format('LLLL')}</span>
+  		<div>
+  			<span>{faDate}</span>
+  		</div>
   			<span>{length} min read</span>
   		</div>
   		<p>{snippet}</p>
