@@ -5,7 +5,33 @@ export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value='hello'>{children}</AppContext.Provider>
+
+	const [loading,setLoading] = useState(false)
+	const [error,setError] = useState({isError:false,msg:''})
+	const [movies,setMovies] = useState([])
+	const [query,setQuery] = useState('lord of the rings')
+
+	const fetchData = async (url)=>{
+		setLoading(true)
+		try {
+			const response =await fetch(url)
+			const data =await response.json()
+			if(data.Respons){
+				setMovies(data.Search)
+				setError({isError:false,msg:''})
+			}else{
+				setError({isError:true,msg:data.Error})
+			}
+		} catch(e) {
+			console.log(e);
+		}
+	}
+
+	useEffect(()=>{
+		fetchData(`${API_ENDPOINT}&s=${query}`)
+	},[query])
+
+  return <AppContext.Provider value={movies,loading,error,query,setQuery} >{children}</AppContext.Provider>
 }
 // make sure use
 export const useGlobalContext = () => {
