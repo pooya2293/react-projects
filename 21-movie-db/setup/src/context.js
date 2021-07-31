@@ -16,14 +16,17 @@ const AppProvider = ({ children }) => {
 		try {
 			const response =await fetch(url)
 			const data =await response.json()
-			if(data.Respons){
+
+			if(data.Response === 'True'){
 				setMovies(data.Search)
 				setError({isError:false,msg:''})
 			}else{
 				setError({isError:true,msg:data.Error})
 			}
+			setLoading(false)
 		} catch(e) {
 			console.log(e);
+			setLoading(false)
 		}
 	}
 
@@ -31,7 +34,7 @@ const AppProvider = ({ children }) => {
 		fetchData(`${API_ENDPOINT}&s=${query}`)
 	},[query])
 
-  return <AppContext.Provider value={movies,loading,error,query,setQuery} >{children}</AppContext.Provider>
+  return <AppContext.Provider value={{movies,loading,error,query,setQuery}} >{children}</AppContext.Provider>
 }
 // make sure use
 export const useGlobalContext = () => {
