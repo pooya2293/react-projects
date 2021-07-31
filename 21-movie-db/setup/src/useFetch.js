@@ -15,7 +15,7 @@ const useFetch = (urlParams)=>{
 			const data =await response.json()
 
 			if(data.Response === 'True'){
-				setData(data.Search)
+				setData(data.Search || data)
 				setError({isError:false,msg:''})
 			}else{
 				setError({isError:true,msg:data.Error})
