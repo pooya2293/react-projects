@@ -5,7 +5,14 @@ import SetupForm from './SetupForm'
 import Loading from './Loading'
 import Modal from './Modal'
 function App() {
-  return <h2>quiz starter</h2>
+  const {isLoading,waiting,quations,corract,index} = useGlobalContext();
+  if(waiting){
+  	return <SetupForm />
+  }
+  if(isLoading){
+  	return <Loading />
+  }
+  return <main>quiz app</main>
 }
 
 export default App
