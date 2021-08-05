@@ -24,6 +24,17 @@ const AppProvider = ({ children }) => {
 
 	const [isModalOpen,setIsModalOpen] = useState(false)
 
+	const fetchQuations = async(url)=>{
+		setLoading(true)
+		setWaiting(false)
+		const response = await axios(url).catch((err)=>console.log(err))
+		console.log(response)
+	}
+
+	useEffect(()=>{
+	  fetchQuations(tempUrl)
+	},[])
+
   return <AppContext.Provider value={{ waiting,isLoading,quations,index,corract,error,isModalOpen }} >{children}</AppContext.Provider>
 }
 // make sure use
