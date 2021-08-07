@@ -44,11 +44,23 @@ const AppProvider = ({ children }) => {
 		}
 	}
 
+	const nextQuation = ()=>{
+		setIndex((oldIndex)=>{
+			const index = oldIndex + 1
+			if(index > quations.length - 1){
+				// open modal
+				return 0
+			}else{	
+				return index
+			}
+		})
+	}
+
 	useEffect(()=>{
 	  fetchQuations(tempUrl)
 	},[])
 
-  return <AppContext.Provider value={{ waiting,isLoading,quations,index,corract,error,isModalOpen }} >{children}</AppContext.Provider>
+  return <AppContext.Provider value={{ waiting,isLoading,quations,index,corract,error,isModalOpen,nextQuation }} >{children}</AppContext.Provider>
 }
 // make sure use
 export const useGlobalContext = () => {
