@@ -21,6 +21,11 @@ const AppProvider = ({ children }) => {
 	const [index,setIndex] = useState(0)
 	const [corract,setCorract] = useState(0)
 	const [error,setError] = useState(false)
+	const [quiz,setQuiz] = useState({
+		amount:10,
+		category:'sports',
+		difficulty:'easy'
+	})
 
 	const [isModalOpen,setIsModalOpen] = useState(false)
 
@@ -48,7 +53,7 @@ const AppProvider = ({ children }) => {
 		setIndex((oldIndex)=>{
 			const index = oldIndex + 1
 			if(index > quations.length - 1){
-				// open modal
+				openModal()
 				return 0
 			}else{	
 				return index
@@ -63,11 +68,39 @@ const AppProvider = ({ children }) => {
 		nextQuation()
 	}
 
-	useEffect(()=>{
-	  fetchQuations(tempUrl)
-	},[])
+	const openModal = ()=>{
+		setIsModalOpen(true)
+	}
 
-  return <AppContext.Provider value={{ waiting,isLoading,quations,index,corract,error,isModalOpen,nextQuation,checkAnswer }} >{children}</AppContext.Provider>
+	const closeModal = ()=>{
+		setWaiting(true)
+		setCorract(0)
+		setIsModalOpen(false)
+	}
+
+	const handleChange = (e)=>{
+	  console.log(e)
+	}
+
+	const handleSubmite = (e)=>{
+		e.preventDefault()
+	}
+
+  return <AppContext.Provider value={{ 
+  	waiting,
+  	isLoading,
+  	quations,
+  	index,
+  	corract,
+  	error,
+  	isModalOpen,
+  	nextQuation,
+  	checkAnswer,
+  	openModal,
+  	closeModal,
+  	quiz,
+  	handleChange,
+  	handleSubmite }} >{children}</AppContext.Provider>
 }
 // make sure use
 export const useGlobalContext = () => {
