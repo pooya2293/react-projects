@@ -14,7 +14,17 @@ function App() {
   }
 
   const {correct_answer,incorrect_answers,question} = quations[index]
-  const answers = [...incorrect_answers,correct_answer]
+  // const answers = [...incorrect_answers,correct_answer]
+
+  let answers = [...incorrect_answers]
+  const tempIndex = Math.floor(Math.random() * 4)
+  console.log(tempIndex)
+  if(tempIndex === 3){
+    answers.push(correct_answer)//go to finish
+  }else{
+    answers.push(answers[tempIndex])//incoract go to finish
+    answers[tempIndex] = correct_answer//corract go instead of incorract
+  }
 
   return (
   	<main>
