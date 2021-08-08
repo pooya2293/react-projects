@@ -32,7 +32,7 @@ const SetupForm = () => {
   	      	onChange={handleChange} >
   	      	  <option value="history">history</option>
   	      	  <option value="sports">sports</option>
-  	      	  <option value="politicts">politicts</option>
+  	      	  <option value="politics">politics</option>
   	        </select>
   	      </div>
   	       {/*difficulty*/}
