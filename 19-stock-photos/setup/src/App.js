@@ -12,7 +12,7 @@ function App() {
 
 	const [loading,setLoading] = useState(false);
 	const [photos,setPhotos] = useState([]);
-	const [page,setPage] = useState(0);
+	const [page,setPage] = useState(1);
 	const [query,setQuery] = useState('');
 
 	const fetchData = async()=>{
@@ -39,7 +39,6 @@ function App() {
 				}
 			});
 			setLoading(false);
-
 		}catch(error){
 			setLoading(false)
 			console.log(error)
@@ -48,6 +47,7 @@ function App() {
 
 	const handleSubmit = (e)=>{
 		e.preventDefault();
+		fetchData();
 		setPage(1);
 	}
 
@@ -58,8 +58,9 @@ function App() {
 
 	useEffect(()=>{
 		const event = window.addEventListener('scroll' ,()=>{
-			if(!loading && window.innerHeight + window.scrollY >= document.body.scrollHeight - 4)
+			if(!loading && window.innerHeight + window.scrollY >= document.body.scrollHeight - 1)
 			{
+
 				setPage((oldPage)=>{
 					return oldPage + 1
 				})
@@ -82,7 +83,7 @@ function App() {
   			<section className="photos">
   				<div className="photos-center">
   					{photos.map((image,index)=>{
-  						return <Photo key={image.id} {...image} />
+  						return <Photo key={index} {...image} />
   					})}
   				</div>
   				{loading && <h2 className='loading'>loading...</h2>}
