@@ -3,7 +3,7 @@ import React from 'react'
 const Article = ({ date,length,snippet,title }) => {
 	
 	const options = {weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'}
-	const faDate = date.toLocaleString('fa-FA',options);//so in here i dont use moment js
+	const faDate = date.toLocaleString('fa-FA',options);
 
   return (
   	<article className='post'>
